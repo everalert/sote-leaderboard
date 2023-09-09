@@ -1,0 +1,1199 @@
+/*
+	IMAGE URL LIST
+	http://puu.sh/8htVJ.png - page (tiling)			[background] 
+	http://puu.sh/8htJa.jpg - page (image)			[background] 
+	http://puu.sh/8imvF.png - table					[border-image] (24px)
+	http://puu.sh/8CINY.png - popup					[border-image] (24px)
+	http://puu.sh/8iXW4.png - button				[border-image] (3px)
+	http://puu.sh/8iXYy.png - button hover			[border-image] (3px)
+	http://puu.sh/8iXXx.png - button active			[border-image] (3px)
+	http://puu.sh/8laY1.png - button red			[border-image] (3px)
+	http://puu.sh/8laZk.png - button red hover		[border-image] (3px)
+	http://puu.sh/8laYM.png - button red active		[border-image] (3px)
+	http://puu.sh/8laUm.png - button blu			[border-image] (3px)
+	http://puu.sh/8laVC.png - button blu hover		[border-image] (3px)
+	http://puu.sh/8laVe.png - button blu active		[border-image] (3px)
+	http://puu.sh/8laWo.png - button grn			[border-image] (3px)
+	http://puu.sh/8laXs.png - button grn hover		[border-image] (3px)
+	http://puu.sh/8laWS.png - button grn active		[border-image] (3px)
+	http://puu.sh/8mx2U.png - textbox				[border-image] (3px)
+	http://puu.sh/8jLns.png - status buttons		[background]
+	http://puu.sh/8mq0u.png - select arrow			[background]
+	http://puu.sh/8mzWE.png - checkbox				[background]
+*/
+
+
+/*
+	GENERAL SETTINGS
+*/
+
+html {
+	overflow-y: scroll;
+	background:  url("http://puu.sh/8htVJ.png") center repeat-y, url("http://puu.sh/8htJa.jpg") fixed center;
+	z-index: 0;
+}
+
+body, body * {
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+body {
+	color: #fff;
+}
+
+#container {
+	width: 1126px;
+	font-family: calibri, arial, sans-serif;
+	font-size: 14px;
+	margin: 0 auto;
+}
+
+ul {
+	list-style-type: none;
+}
+li a {
+	display: block;
+}
+
+p {
+	margin-bottom: 1em;
+}
+p.error, p.success {
+	font-weight: bold;
+	border-width: 2px;
+	border-style: solid;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	width: 384px;
+}
+p.error {
+	border-color: #800000;
+	background: #400000;
+	color: #ffbfbf;
+}
+p.success {
+	border-color: #008000;
+	background: #004000;
+	color: #bfffbf;
+}
+
+a {
+	color: #fff; /* alt:#bfdfff */
+	text-decoration: none;
+}
+a:hover {
+	color: #0080ff;
+}
+a.button, input[type="submit"] {
+	border-style: solid;
+	border-width: 3px;
+	-moz-border-image: url("http://puu.sh/8iXW4.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8iXW4.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8iXW4.png") 3 stretch;
+	border-image: url("http://puu.sh/8iXW4.png") 3 fill stretch;
+	padding: 0 0.2em;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	font-weight: bold;
+	/*margin-right: 0.65em;*/
+	text-shadow: 0px 1px 2px #000;
+	letter-spacing: 0.05em;
+	font-family: inherit;
+	color: #fff;
+	background: url("http://puu.sh/8iXYy.png") -512px -512px no-repeat, url("http://puu.sh/8iXXx.png") -512px -512px no-repeat; /* preloading */
+	cursor: pointer;
+}
+a.button:hover, input[type="submit"]:hover {
+	-moz-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	border-image: url("http://puu.sh/8iXYy.png") 3 fill stretch;
+	color: #fff;
+}
+a.button:active, input[type="submit"]:active {
+	-moz-border-image: url("http://puu.sh/8iXXx.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8iXXx.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8iXXx.png") 3 stretch;
+	border-image: url("http://puu.sh/8iXXx.png") 3 fill stretch;
+}
+a.button-warning, input[type="submit"].warning {
+	border-style: solid;
+	border-width: 3px;
+	-moz-border-image: url("http://puu.sh/8laY1.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8laY1.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8laY1.png") 3 stretch;
+	border-image: url("http://puu.sh/8laY1.png") 3 fill stretch;
+	padding: 0 0.2em;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	font-weight: bold;
+	/*margin-right: 0.65em;*/
+	text-shadow: 0px 1px 2px #000;
+	letter-spacing: 0.05em;
+	font-family: inherit;
+	color: #fff;
+	background: url("http://puu.sh/8laZk.png") -512px -512px no-repeat, url("http://puu.sh/8laYM.png") -512px -512px no-repeat; /* preloading */
+	cursor: pointer;
+}
+a.button-warning:hover, input[type="submit"].warning:hover {
+	-moz-border-image: url("http://puu.sh/8laZk.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8laZk.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8laZk.png") 3 stretch;
+	border-image: url("http://puu.sh/8laZk.png") 3 fill stretch;
+	color: #fff;
+}
+a.button-warning:active, input[type="submit"].warning:active {
+	-moz-border-image: url("http://puu.sh/8laYM.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8laYM.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8laYM.png") 3 stretch;
+	border-image: url("http://puu.sh/8laYM.png") 3 fill stretch;
+}
+
+h1 {
+	font-size: 3em;
+	font-family: Cambria, "Lucida Bright", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	letter-spacing: -0.075em;
+	text-shadow: 0px 0.05em 0.1em #000;
+}
+h2 {
+	font-size: 1.8em;
+	font-family: Cambria, "Lucida Bright", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	letter-spacing: -0.075em;
+	font-variant: small-caps;
+	text-shadow: 0px 0.05em 0.1em #000;
+}
+h3 {
+	font-size: 1.2em;
+	font-family: Cambria, "Lucida Bright", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	letter-spacing: -0.075em;
+	font-variant: small-caps;
+	text-shadow: 0px 0.05em 0.1em #000;
+}
+h1 .subheading, h2 .subheading, h3 .subheading {
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+form {
+	margin: 1em 0;
+	width: 520px;
+}
+label, div.label {
+	display: block;
+	clear: both;
+	margin-top: 0.5em;
+	overflow: hidden;
+	padding: 4px 0;
+}
+label .name, div.label .name {
+	display: block;
+	float: left;
+	width: 128px;
+	font-weight: bold;
+	padding: 0.25em 0;
+}
+label .name .note, div.label .name .note {
+	display: block;
+	font-size: 0.75em;
+	font-weight: normal;
+	color: #808080;
+	margin-top: 0.5em;
+}
+label .field, div.label .field {
+	display: block;
+	float: right;
+	width: 384px;
+	font-weight: bold;
+	color: #808080;
+}
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url("http://puu.sh/8mq0u.png") no-repeat right;
+	width: 192px;
+	border: 0;
+	font: inherit;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0px 1px 2px #000;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+}
+.select-wrapper {
+	border-style: solid;
+	border-width: 3px;
+	-moz-border-image: url("http://puu.sh/8iXW4.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8iXW4.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8iXW4.png") 3 stretch;
+	border-image: url("http://puu.sh/8iXW4.png") 3 fill stretch;
+	padding: 0 0.2em;
+}
+.select-wrapper:hover {
+	-moz-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	border-image: url("http://puu.sh/8iXYy.png") 3 fill stretch;
+}
+option {
+	background: #404040;
+	padding: 0.2em 0.4em;
+	font-weight: bold;
+}
+input[type="text"], input[type="password"], textarea {
+	font: inherit;
+	border-style: solid;
+	border-width: 3px;
+	-moz-border-image: url("http://puu.sh/8mx2U.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8mx2U.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8mx2U.png") 3 stretch;
+	border-image: url("http://puu.sh/8mx2U.png") 3 fill stretch;
+	background: none;
+	width: 192px;
+	padding: 1px 2px;
+	font-weight: normal;
+	color: #000;
+}
+input[type="text"] {
+	margin: 0 0.2em;
+}
+input[type="text"]:last-child {
+	margin: 0 0 0 0.2em;
+}
+input[type="text"]:first-child {
+	margin: 0 0.2em 0 0;
+}
+textarea {
+	height: 4em;
+}
+input[name="tgameH"], input[name="tgameM"], input[name="tgameS"], input[name="trealH"], input[name="trealM"], input[name="trealS"],
+input[name="bdayM"], input[name="bdayD"], input[name="achieveMo"], input[name="achieveDa"], input[name="achieveHo"], input[name="achieveMi"], input[name="achieveSe"] {
+	width: 1.3em;
+	text-align: center;
+	text-shadow: 0 1px 2px #fff;
+}
+input[name="achieveYe"], input[name="bdayY"] {
+	width: 2.6em;
+	text-align: center;
+	text-shadow: 0 1px 2px #fff;
+}
+input[type="checkbox"] {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	display: none;
+}
+input[type="checkbox"]+span.check {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url("http://puu.sh/8mzWE.png") 0 0;
+	margin-right: 4px;
+}
+input[type="checkbox"]:hover+span.check {
+	background-position: 0 -24px;
+}
+input[type="checkbox"]:active+span.check {
+	background-position: 0 -48px;
+}
+input[type="checkbox"]:checked+span.check {
+	background-position: -24px 0;
+}
+input[type="checkbox"]:checked:hover+span.check {
+	background-position: -24px -24px;
+}
+input[type="checkbox"]:checked:active+span.check {
+	background-position: -24px -48px;
+}
+.checktext {
+	position: relative;
+	top: -0.6em;
+}
+
+
+
+/*
+	HEADER & FOOTER
+*/
+
+#header, #footer {
+	padding: 0.2em 0;
+	z-index: 5;
+}
+#header .focus, #footer .focus {
+	font-weight: bold;
+}
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #000;
+	border-bottom: 1px solid #1a1a1a;
+}
+#header-container {
+	width: 1126px;
+	margin: 0 auto;
+}
+#head-main {
+	float: left;
+}
+#head-main li {
+	float: left;
+	margin-right: 0.65em;
+}
+#head-user {
+	float: right;
+}
+#head-user li {
+	float: right;
+	margin-left: 0.65em;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #000;
+	border-top: 1px solid #1a1a1a;
+}
+#footer-container {
+	width: 1126px;
+	margin: 0 auto;
+}
+#foot-message {
+	float: left;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+#foot-menu {
+	float: right;
+}
+#foot-menu li {
+	float: right;
+	margin-left: 0.65em;
+}
+
+
+
+/*
+	MENU
+*/
+
+#menu {
+	float: left;
+	width: 192px;
+	margin: 1.4em 0;
+	padding: 9px 0;
+}
+#menu>* {
+	margin: 0 8px;
+}
+#menu li a {
+	letter-spacing: -0.085em;
+	line-height: 1.2em;
+}
+
+#menu .ranking-menu {
+	margin-top: 0.5em;
+}
+
+#menu .ranking-game {
+	margin-bottom: 0.75em;
+}
+#menu .ranking-game h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+#menu .ranking-game img {
+	display: block;
+	margin-bottom: 0.25em;
+}
+
+
+
+/*
+	PAGE
+*/
+
+#page {
+	float: right;
+	width: 934px;
+	margin: 1.4em 0;
+	padding: 9px 0;
+}
+
+#title {
+	padding: 0 8px;
+}
+#title img {
+	float: left;
+	margin-right: 8px;
+}
+#title .avatar {
+	width: 64px;
+	height: 64px;
+}
+#title .ranking-image {
+	box-shadow: 0px 2px 4px #000;
+}
+#title p {
+	margin-top: 0.5em;
+}
+#title h2 {
+	margin-top: 0.25em;
+	font-size: 2.2em;
+}
+#title .actions {
+	float: right;
+}
+#title .desc {
+	font-style: italic;
+	margin-top: 1em;
+	font-size: 1.2em;
+}
+
+#content {
+	clear: both;
+	padding: 1em 8px 0;
+}
+#content ul {
+	margin-bottom: 1em;
+}
+#content li {
+	margin: 0 1em 0.25em;
+	list-style-type: circle;
+}
+#content h2 {
+	margin-bottom: 0.25em;
+}
+
+/* Homepage */
+
+#home-info {
+	width: 516px;
+	float: left;
+}
+#home-recent {
+	width: 402px;
+	float: right;
+}
+#home-recent h2, #home-info h2 {
+	margin-bottom: 0.25em;
+}
+
+/* Contact */
+
+#contact .contact-player p {
+	margin: 0.2em 0 0;
+}
+#contact .contact-player p:last-child {
+	margin: 0.2em 0 0.75em;
+}
+#contact .contact-player p img {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+
+/* Player Profile */
+
+#player-info {
+	float: left;
+	padding-right: 8px;
+	width: 250px;
+}
+#player-info .bio {
+	margin: 0 0 1.5em;
+}
+#player-info h3 {
+	margin: 0.5em 0 0;
+}
+#player-info h3:nth-child(2) {
+	margin: -0.15em 0 0;
+}
+#player-info img {
+	vertical-align: middle;
+	margin-right: 4px;
+}
+#player-rankings {
+	float: left;
+	padding-right: 8px;
+	width: 250px;
+}
+#player-rankings .none {
+	margin: 1em 0 1.5em;
+}
+.rankstats {
+	margin-bottom: 1em;
+	border-bottom: 2px solid #004d99;
+	background: #00264d;
+	background: -webkit-linear-gradient(bottom,#00264d,#001326); /*Safari 5.1-6*/
+	background: -o-linear-gradient(top,#00264d,#001326); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(top,#00264d,#001326); /*Fx 3.6-15*/
+	background: linear-gradient(to top,#00264d,#001326); /*Standard*/
+	text-shadow: 0px 1px 3px #000;
+}
+.rankstats h3 {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0.2em 0;
+	border-bottom: 2px solid #004d99;
+	border-top: 2px solid #003973;
+	text-align: center;
+	color: #fff;
+	background: #004d99;
+	background: -webkit-linear-gradient(bottom,#004d99,#003973); /*Safari 5.1-6*/
+	background: -o-linear-gradient(top,#004d99,#003973); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(top,#004d99,#003973); /*Fx 3.6-15*/
+	background: linear-gradient(to top,#004d99,#003973); /*Standard*/
+}
+.rankstats div {
+	border-top: 2px solid #004d99;
+	border-left: 2px solid #004d99;
+	border-right: 2px solid #004d99;
+	color: #80bfff;
+	clear: both;
+}
+.rankstats form {
+	margin: 0;
+	padding: 0.5em 0;
+	width: 100%;
+	text-align: center;
+}
+.rankstats div:first-child {
+	border: 0;
+}
+.rankstats .title {
+	text-transform: uppercase;
+	display: block;
+	border-bottom: 1px solid #004080;
+	padding: 0.2em 0;
+	font-size: 0.85em;
+	font-weight: bold;
+	text-align: center;
+}
+.rankstats .rank {
+	display: table-cell;
+	table-layout: fixed;
+	width: 98px;
+	text-align: center;
+	font-size: 3em;
+	font-weight: bold;
+	padding: 0.2em 0;
+}
+.rankstats .pts, .rankstats .tme {
+	display: table-cell;
+	table-layout: fixed;
+	vertical-align: middle;
+	width: 148px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 0.50em;
+	color: #bfdfff;
+}
+.rankstats .suffix {
+	font-size: 0.65em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.rankstats .info {
+	display: block;
+	text-align: center;
+	font-size: 1.4em;
+	font-weight: bold;
+	padding: 0.2em 0;
+	color: #bfdfff;
+}
+.rankstats .rating {
+	display: block;
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: bold;
+	padding: 0.15em 0;
+}
+.rankstats form p {
+	padding: 0.2em 0;
+	text-align: center;
+}
+#player-history {
+	float: left;
+	width: 402px;
+}
+#player-history .none, #player-rankings .none {
+	color: #808080;
+}
+
+/* Player Game Timesheet */
+
+#player-timesheet {
+	width: 918px;
+}
+#player-timesheet p, #game-timesheet p {
+	margin: 1em 0 1.5em;
+}
+
+.timesheet-points {
+	width: 459px;
+	float: left;
+	padding: 1em 0;
+}
+.timesheet-points .suffix {
+	text-transform: uppercase;
+	font-size: 0.65em;
+}
+.timesheet-time {
+	width: 459px;
+	float: right;
+	padding: 1em 0;
+}
+.timesheet-time .note {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.65em;
+	color: #808080;
+	margin-top: 0em;
+}
+.timesheet-points h2, .timesheet-time h2 {
+	text-transform: uppercase;
+	text-align: center;
+}
+.timesheet-points .points, .timesheet-time .time {
+	display: block;
+	font-size: 3.5em;
+	font-weight: bold;
+	text-align: center;
+	padding: 0 0 0.2em;
+}
+#game-timesheet .timesheet-time {
+	margin: 0 auto;
+	float: none;
+}
+
+/* Player Time History */
+
+.pagination {
+	margin: 0 auto 0.5em;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+.pagination>* {
+	margin-right: 4px;
+}
+.pagination>*:last-child {
+	margin-right: 0;
+}
+.pagination:last-child {
+	margin: 0.5em auto;
+}
+.pagination .blank {
+	-moz-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	-webkit-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	-o-border-image: url("http://puu.sh/8iXYy.png") 3 stretch;
+	border-image: url("http://puu.sh/8iXYy.png") 3 fill stretch;
+	text-align: center;
+	border-style: solid;
+	border-width: 3px;
+	text-shadow: 0px 1px 2px #000;
+}
+.pagination a.button {
+	font-size: 1em;
+	text-align: center;
+}
+.pagination .mid {
+	display: inline-block;
+	padding: 0.2em 0;
+	width: 1.5em;
+}
+.pagination .end {
+	display: inline-block;
+	padding: 0.2em 0;
+	width: 2em;
+}
+
+/* Game Leaders & Player List */
+
+#game-leaderpts, #player-listname {
+	width: 455px;
+	float: left;
+}
+#game-leadertime, #player-listdate {
+	width: 455px;
+	float: right;
+}
+#game-leaderpts h2, #game-leadertime h2, #player-listname h2, #player-listdate h2 {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+/* Time Page */
+
+h1 .subtime, h2 .subtime {
+	font-weight: normal;
+	font-size: 0.9em;
+	color: #bfbfbf;
+}
+
+#time-info {
+	width: 640px;
+	float: left;
+}
+#time-info h3 {
+	margin: 1em 0 0.5em;
+}
+#time-info .vidlink {
+	font-size: 0.75em;
+	color: #808080;
+	float: right;
+	margin-top: 0.25em;
+}
+#time-info .vidlink a {
+	color: #808080;
+}
+#time-info .vidlink a:hover {
+	color: #fff;
+}
+#time-info .timelist {
+	clear: both;
+}
+#time-info .timelist .rank {
+	width: 100%;
+	text-align: left;
+}
+#time-info .timelist .subpoints {
+	color: #808080;
+}
+#time-history {
+	width: 270px;
+	float: right;
+}
+#time-history h3 {
+	margin: 0 0 0.5em;
+}
+#time-history .timelist .ver {
+	width: 100%;
+}
+
+/* Time & Player Tables */
+
+#player-timesheet .timelist {
+	font-size: 0.85em;
+}
+#player-timesheet .row .cat {
+	font-weight: bold;
+	font-size: 1.25em;
+}
+#game-timesheet .row .cat {
+	font-weight: bold;
+	font-size: 1.2em;
+	letter-spacing: -0.05em;
+}
+.timelist {
+	border-style: solid;
+	border-width: 24px;
+	-moz-border-image: url("http://puu.sh/8imvF.png") 24 stretch;
+	-webkit-border-image: url("http://puu.sh/8imvF.png") 24 stretch;
+	-o-border-image: url("http://puu.sh/8imvF.png") 24 stretch;
+	border-image: url("http://puu.sh/8imvF.png") 24 fill stretch;
+}
+.timelist table {
+	margin: -24px;
+	border-collapse: separate;
+	border-spacing: 2px;
+	table-layout: fixed;
+}
+.timelist table .cat img {
+	vertical-align: middle;
+	margin-right: 0.5em;
+	box-shadow: 0px 1px 2px #000;
+}
+.timelist table .head {
+	background: #000;
+	border: 1px solid #404040;
+	font-weight: bold;
+	padding: 0.25em 0.4em;
+}
+.timelist table .head td {
+	background: #000;
+	border: 1px solid #404040;
+	font-weight: bold;
+	padding: 0.25em 0.4em;
+}
+.timelist table .row td {
+	border: 1px solid #404040;
+	padding: 0.25em 0.4em;
+	letter-spacing: -0.04em;
+	vertical-align: middle;
+}
+.timelist table .row .cat {
+	width: 100%;
+	height: 2.2em;
+}
+.timelist table .player {
+	width: 100%;
+}
+.timelist table .row .time {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.1em;
+	letter-spacing: 0;
+	background: rgba(255,255,255,0.05);
+	white-space: nowrap;
+}
+.timelist table .row .none {
+	text-align: center;
+	color: #595959;
+	height: 2.2em;
+}
+.timelist table .row .rank {
+	text-align: center;
+}
+.timelist table .row .pts {
+	text-align: center;
+	color: #a6a6a6;
+}
+.timelist table .head .time {
+	text-align: center;
+}
+.timelist table .head .totals {
+	text-transform: uppercase;
+	font-size: 1.4em;
+}
+.timelist table .head .total {
+	text-align: center;
+	font-size: 1.4em;
+}
+.timelist table .head .dif {
+	text-align: center;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+.timelist table .current td {
+	background: rgba(255,255,0,0.1);
+	border-color: #505000;
+}
+.timelist table .current .time {
+	background: rgba(255,255,0,0.15);
+	
+}
+.timelist table .date {
+	text-align: center;
+	white-space: nowrap;
+}
+.timelist table .ver {
+	text-align: center;
+	white-space: nowrap;
+}
+.timelist table .best {
+	text-align: center;
+	white-space: nowrap;
+}
+.timelist table .status {
+	text-align: center;
+	white-space: nowrap;
+}
+.timelist table .subtime {
+	display: block;
+	font-weight: normal;
+	font-size: 0.75em;
+	color: #595959;
+}
+.timelist table .wrplayers {
+	display: block;
+	font-weight: normal;
+	font-size: 0.75em;
+	color: #bfbfbf;
+	margin-top: 0.25em;
+	letter-spacing: -0.075em;
+}
+.timelist table .wrplayers a {
+	font-weight: bold;
+}
+.timelist .video {
+	background: url("http://puu.sh/8jLns.png") 0 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+.timelist .video:hover {
+	background-position: 0 16px;
+}
+.timelist .video, .timelist .no-video {
+	margin-right: 4px;
+}
+.timelist .comment {
+	background: url("http://puu.sh/8jLns.png") -16px 0;
+	width: 24px;
+	height: 16px;
+	display: inline-block;
+}
+.timelist .comment:hover {
+	background-position: -16px 16px;
+}
+.timelist td.unranked {
+	opacity: 0.25;
+}
+
+#time-rankings {
+	width: 606px;
+	float: left;
+}
+#time-rankings h2 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+#time-rankings .ranking {
+	width: 606px;
+	float: left;
+}
+#time-rankings .ranking:not(:first-child) h2 {
+	margin-top: 0.5em;
+}
+#player-ranking {
+	width: 304px;
+	float: right;
+}
+#player-ranking h2 {
+	text-align: center;
+	text-transform: uppercase;
+	color: #BFBFBF;
+	margin-bottom: 0;
+}
+#time-rankings .row, #player-ranking .row {
+	font-size: 1.05em;
+}
+#time-rankings .rank, #player-ranking .rank {
+	font-size: 1.3em;
+}
+#time-rankings .pts, #player-ranking .pts {
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+#time-rankings-js .ranking {
+	width: 454px;
+	float: left;
+}
+
+#player-gamehistory .row .cat {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#game-leaderpts .row .pts, #game-leadertime .row .time, #player-listname .row .date, #player-listdate .row .date {
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.15em;
+}
+#game-leaderpts .row .rank, #game-leadertime .row .rank {
+	font-size: 1.15em;
+}
+
+#home-recent .timelist {
+	margin-bottom: 0.5em;
+}
+#home-recent .head td {
+	padding: 0.3em 0.5em;
+}
+#home-recent .head .player {
+	float: left;
+	width: auto;
+	vertical-align: bottom;
+}
+#home-recent .head .date {
+	float: right;
+	width: auto;
+	color: #808080;
+	font-size: 1.1em;
+}
+
+.stream {
+	width: auto;
+	overflow: auto;
+	margin-bottom: 1.5em;
+}
+.stream:last-child {
+	margin-bottom: 0;
+}
+.stream h3 {
+	font-size: 1.3em;
+	margin-bottom: 0.25em;
+}
+.stream p {
+	margin-bottom: 0.5em;
+}
+.stream .video {
+	width: 640px;
+	height: 391px;
+	float: left;
+}
+.stream .chat {
+	width: 270px;
+	height: 391px;
+	float: right;
+}
+.stream .video object, .stream .chat iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	clear: none;
+}
+
+#popup-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 10;
+	display: table;
+}
+#popup-video .container {
+	display: table-cell;
+	vertical-align: middle;
+}
+#popup-video .popup {
+	display: block;
+	width: 640px;
+	padding: 8px;
+	margin: auto;
+	border: 2px solid #000;
+	background: rgba(0,0,0,0.75);
+	overflow: hidden;
+}
+#popup-video h2 {
+	margin: 0 0 8px;
+}
+#popup-video .video {
+	clear: both;
+}
+#popup-video .video p {
+	font-size: 1.25em;
+	text-align: center;
+	padding: 1em 0;
+	border: 2px solid #262626;
+	background: rgba(38,38,38,0.75);
+}
+#popup-video .vidlink {
+	font-size: 0.75em;
+	color: #808080;
+	float: right;
+	margin: 0.25em 0 0;
+}
+#popup-video .vidlink a {
+	color: inherit;
+}
+#popup-video .vidlink a:hover {
+	color: #fff;
+}
+#popup-video .info {
+	float: left;
+	font-size: 1.75em;
+	font-weight: bold;
+	margin: 8px 0 0;
+}
+#popup-video .info .subtime {
+	font-weight: normal;
+	font-size: 0.85em;
+	color: #d9d9d9;
+	margin-left: 0.25em;
+	display: inline-block;
+	position: relative;
+	top: -0.075em;
+}
+#popup-video .close {
+	float: right;
+	padding: 0.4em 0;
+	margin: 0;
+}
+
+
+
+/*
+	COLOURS/FORMATTING
+*/
+
+/* Rankings*/
+
+.rnk1 {
+	color: #ffbf00;
+	font-weight: bold;
+}
+.rnk2 {
+	color: #bfbfbf;
+	font-weight: bold;
+}
+.rnk3 {
+	color: #805020;
+	font-weight: bold;
+}
+
+/* Difficulty */
+
+.dALL {
+	color: #8000ff;
+}
+.dEASY {
+	color: #0f0;
+}
+.dMED {
+	color: #ff0;
+}
+.dHARD {
+	color: #f00;
+}
+.dJEDI {
+	color: #fff;
+}
+
+/* Domination */
+
+.rankstats .d0 {
+	color: #FF0000;
+}
+.rankstats .d1 {
+	color: #FF3300;
+}
+.rankstats .d2 {
+	color: #FF6600;
+}
+.rankstats .d3 {
+	color: #FF9900;
+}
+.rankstats .d4 {
+	color: #FFCC00;
+}
+.rankstats .d5 {
+	color: #FEFF00;
+}
+.rankstats .d6 {
+	color: #CBFF00;
+}
+.rankstats .d7 {
+	color: #98FF00;
+}
+.rankstats .d8 {
+	color: #65FF00;
+}
+.rankstats .d9 {
+	color: #32FF00;
+}
+.rankstats .d10 {
+	color: #00FF00;
+}
+
+/* Best Time */
+
+.bst1 {
+	font-weight: bold;
+}
+.bst0 {
+	color: #808080;
+}
